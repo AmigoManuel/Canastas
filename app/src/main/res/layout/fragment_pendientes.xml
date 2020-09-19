@@ -3,15 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PendientesFragment">
 
-    <!-- RecyclerView es similar a ListView
-    listitem te permite previsualizar el resultado -->
-    <androidx.recyclerview.widget.RecyclerView
-        tools:listitem="@layout/item_canasta"
-        android:id="@+id/recyclerViewPendientes"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp"
-        android:clipToPadding="false" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_pendientes_title"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:padding="4dp"
+            android:layout_margin="8dp"
+            android:typeface="sans"/>
+
+        <!-- RecyclerView es similar a ListView
+        listitem te permite previsualizar el resultado -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            tools:listitem="@layout/item_canasta"
+            android:id="@+id/recyclerViewPendientes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
+
 </FrameLayout>

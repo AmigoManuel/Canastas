@@ -17,12 +17,27 @@
         <!-- Fragments -->
         <!-- Sobre ViewPager se mostraran los fragments
         que correspondan a cada tab -->
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpager"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-        </androidx.viewpager.widget.ViewPager>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <!-- Btn flotante -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_nueva_canasta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="nueva_canasta"
+                android:src="@drawable/ic_baseline_add_shopping_cart_24" />
+        </FrameLayout>
 
         <!-- Tabs -->
         <!-- weight define el peso dentro del layout
@@ -32,8 +47,8 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_weight="0.1"
             android:layout_height="0dp"
+            android:layout_weight="0.1"
             app:tabBackground="@color/colorPrimary"
             app:tabTextColor="@color/colorWhite">
 
