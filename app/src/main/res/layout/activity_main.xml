@@ -15,10 +15,16 @@
         android:orientation="vertical">
 
         <!-- Tabs -->
+        <!-- weight define el peso dentro del layout
+        para hacer esto se defe definir height como 0dp-->
+        <!-- tabBackground colorea el fondo del tab -->
+        <!-- tabTextColor colorea el texto del tab -->
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_weight="0.1"
-            android:layout_height="0dp">
+            android:layout_height="0dp"
+            app:tabBackground="@color/colorPrimary"
+            app:tabTextColor="@color/colorWhite">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
