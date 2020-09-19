@@ -14,34 +14,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Tabs -->
-        <!-- weight define el peso dentro del layout
-        para hacer esto se defe definir height como 0dp-->
-        <!-- tabBackground colorea el fondo del tab -->
-        <!-- tabTextColor colorea el texto del tab -->
-        <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_weight="0.1"
-            android:layout_height="0dp"
-            app:tabBackground="@color/colorPrimary"
-            app:tabTextColor="@color/colorWhite">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_item_1" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_item_2" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_item_3" />
-        </com.google.android.material.tabs.TabLayout>
-
         <!-- Fragments -->
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
@@ -49,5 +21,34 @@
             android:layout_height="0dp"
             android:layout_weight="1">
         </androidx.viewpager.widget.ViewPager>
+
+        <!-- Tabs -->
+        <!-- weight define el peso dentro del layout
+        para hacer esto se defe definir height como 0dp-->
+        <!-- tabBackground colorea el fondo del tab -->
+        <!-- tabTextColor colorea el texto del tab -->
+        <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.1"
+        android:layout_height="0dp"
+        app:tabBackground="@color/colorPrimary"
+        app:tabTextColor="@color/colorWhite">
+
+            <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_item_1" />
+
+            <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_item_2" />
+
+            <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_item_3" />
+        </com.google.android.material.tabs.TabLayout>
+
     </LinearLayout>
 </RelativeLayout>
