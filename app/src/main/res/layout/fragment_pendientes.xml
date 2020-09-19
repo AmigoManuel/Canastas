@@ -11,5 +11,7 @@
         tools:listitem="@layout/item_canasta"
         android:id="@+id/recyclerViewPendientes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:clipToPadding="false" />
 </FrameLayout>

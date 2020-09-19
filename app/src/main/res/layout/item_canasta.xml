@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Padding añade margenes en todos los bordes -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:layout_margin="4dp">
 
 
     <!-- En este documento se especifica como se muestra un item Canasta.kt,
@@ -12,7 +12,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:outlineAmbientShadowColor="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -25,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nombre"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="5dp">
 
@@ -70,4 +72,4 @@
         </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+</androidx.cardview.widget.CardView>
