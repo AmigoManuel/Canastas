@@ -4,29 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
     <!-- Añadimos orientación de la pantalla -->
-
     <!-- layout contiene los tabs y fragments con listas -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <!-- Fragments -->
-        <!-- Sobre ViewPager se mostraran los fragments
-        que correspondan a cada tab -->
+        <!-- Contiene el visor de fragments con el botón flotante -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-
+            <!-- Fragments -->
+            <!-- Sobre ViewPager se mostraran los fragments
+            que correspondan a cada tab -->
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
+                android:layout_height="match_parent" />
             <!-- Btn flotante -->
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btn_nueva_canasta"
@@ -38,7 +35,6 @@
                 android:onClick="nueva_canasta"
                 android:src="@drawable/ic_baseline_add_shopping_cart_24" />
         </FrameLayout>
-
         <!-- Tabs -->
         <!-- weight define el peso dentro del layout
         para hacer esto se defe definir height como 0dp-->
@@ -51,17 +47,17 @@
             android:layout_weight="0.1"
             app:tabBackground="@color/colorPrimary"
             app:tabTextColor="@color/colorWhite">
-
+            <!-- Tab de pendientes -->
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_item_1" />
-
+            <!-- Tab de completadas -->
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_item_2" />
-
+            <!-- Tab de canceladas -->
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
