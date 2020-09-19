@@ -53,13 +53,9 @@ class PendientesFragment : Fragment() {
         val canasta_1 = Canasta("Compras super",12990, "Lider", "Compras del mes que debo hacer en el super", LocalDate.now(), LocalTime.now())
         val canasta_2 = Canasta("Compras ropa",34600, "Falabella", "Comprar ropa en falabella", LocalDate.now(), LocalTime.now())
         val listaCanastas = listOf(canasta_1, canasta_2)
-
         recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas)
         recyclerViewPendientes.layoutManager = LinearLayoutManager(activity)
         recyclerViewPendientes.setHasFixedSize(true)
-
-        //val adapter = CanastaAdapter(this, listaCanastas)
-        //listViewPendientes.adapter = adapter
     }
 
     companion object {

@@ -1,25 +1,23 @@
 package com.example.canastas
 
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_canasta.view.*
 
+// CanastaAdapter se encarga de representar la información
+// que contenga dentro de la RecyclerView
 class CanastaAdapter(private val listCanasta : List<Canasta>) : RecyclerView.Adapter<CanastaAdapter.CanastaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CanastaViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_canasta,
-            parent,
-            false
-        )
+        // Esta linea instancia la vista de los items dentro del layout
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_canasta, parent, false)
         return CanastaViewHolder(itemView)
     }
 
+    // Esta función escribira sobre cada item los valores dentro de la listCanasta
     override fun onBindViewHolder(holder: CanastaViewHolder, position: Int) {
         val currentItem = listCanasta[position]
         holder.textViewNombre.text = currentItem.nombre
@@ -31,6 +29,7 @@ class CanastaAdapter(private val listCanasta : List<Canasta>) : RecyclerView.Ada
         return listCanasta.size
     }
 
+    // La subclase ViewHolder ayuda a identificar los elementos del item en la lista
     class CanastaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textViewNombre: TextView = itemView.nombre
         val textViewTienda: TextView = itemView.tienda

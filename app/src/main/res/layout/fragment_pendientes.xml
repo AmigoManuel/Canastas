@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".PendientesFragment">
 
-
+    <!-- RecyclerView es similar a ListView
+    listitem te permite previsualizar el resultado -->
     <androidx.recyclerview.widget.RecyclerView
         tools:listitem="@layout/item_canasta"
         android:id="@+id/recyclerViewPendientes"
