@@ -1,0 +1,8 @@
+<resources>
+    <!-- Nombre de la app -->
+    <string name="app_name">Canastas</string>
+    <!-- Nombre de los tabs -->
+    <string name="tab_item_1">Pendientes</string>
+    <string name="tab_item_2">Completadas</string>
+    <string name="tab_item_3">Canceladas</string>
+</resources>
