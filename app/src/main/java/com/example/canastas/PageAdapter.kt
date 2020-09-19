@@ -4,8 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-// PageController se encarga de gestionar que fragment mostrar
-class PageController(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+// PageAdapter se encarga de gestionar que fragment mostrar al presionar un tab
+// PageAdapter hereda de FragmentPagerAdapter
+class PageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     // Cantidad de tabs
     override fun getCount(): Int {
         return 3
@@ -17,10 +18,10 @@ class PageController(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         // When es un switch
         return when (position) {
             0 -> {
-                CompletadasFragment()
+                PendientesFragment()
             }
             1 -> {
-                PendientesFragment()
+                CompletadasFragment()
             }
             2 -> {
                 CanceladasFragment()

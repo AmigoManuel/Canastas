@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".PendientesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="pendientes" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/item_canasta"
+        android:id="@+id/recyclerViewPendientes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

@@ -1,10 +1,18 @@
 package com.example.canastas
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.ListView
+import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_pendientes.*
+import java.time.LocalDate
+import java.time.LocalTime
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,12 +37,29 @@ class PendientesFragment : Fragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pendientes, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        // Prueba de listview
+        val canasta_1 = Canasta("Compras super",12990, "Lider", "Compras del mes que debo hacer en el super", LocalDate.now(), LocalTime.now())
+        val canasta_2 = Canasta("Compras ropa",34600, "Falabella", "Comprar ropa en falabella", LocalDate.now(), LocalTime.now())
+        val listaCanastas = listOf(canasta_1, canasta_2)
+
+        recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas)
+        recyclerViewPendientes.layoutManager = LinearLayoutManager(activity)
+        recyclerViewPendientes.setHasFixedSize(true)
+
+        //val adapter = CanastaAdapter(this, listaCanastas)
+        //listViewPendientes.adapter = adapter
     }
 
     companion object {

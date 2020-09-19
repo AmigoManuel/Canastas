@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Definimos el adapter para controlar viewpager con los tabs
-        viewpager.adapter = PageController(supportFragmentManager)
+        viewpager.adapter = PageAdapter(supportFragmentManager)
         // Liga el tabLayout con el viewpager
         tabLayout.setupWithViewPager(viewpager)
     }
