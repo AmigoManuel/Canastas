@@ -1,4 +1,4 @@
-package com.example.canastas
+package com.example.canastas.models
 
 import java.time.LocalDate
 import java.time.LocalTime
