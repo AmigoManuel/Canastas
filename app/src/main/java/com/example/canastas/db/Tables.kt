@@ -4,6 +4,8 @@ package com.example.canastas.db
 class Tables {
     // abstract y companion para referenciar sin instanciar
     // similar a un static
+
+    // tabla canasta
     abstract class Canasta {
         companion object{
             const val TABLE_NAME = "User"
@@ -16,6 +18,7 @@ class Tables {
             const val COL_HORA = "hora"
         }
     }
+    // tabla producto
     abstract class Producto {
         companion object{
             const val TABLE_NAME = "Producto"
@@ -23,6 +26,14 @@ class Tables {
             const val COL_NOMBRE = "nombre"
             const val COL_VALOR = "valor"
             const val COL_CANTIDAD = "cantidad"
+        }
+    }
+    // tabla para asociar producto a canasta
+    abstract class ProductoEnCanasta {
+        companion object{
+            const val TABLE_NAME = "ProductoEnCanasta"
+            const val COL_ID_CANASTA = "id_canasta"
+            const val COL_ID_PRODUCTO = "id_producto"
         }
     }
 }
