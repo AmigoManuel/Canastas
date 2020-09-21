@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.canastas.db.DBHandler
 import com.example.canastas.models.Canasta
 import kotlinx.android.synthetic.main.fragment_pendientes.*
 import java.time.LocalDate
@@ -45,14 +46,30 @@ class PendientesFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_pendientes, container, false)
     }
 
+    // Se ejecuta al crear el fragment
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setCanastasOnView()
+    }
 
+    // Se ejecuta al volver dentro del fragment
+    // se utiliza para actualizar luego de crear una canasta
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onResume() {
+        super.onResume()
+        setCanastasOnView()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun setCanastasOnView(){
+        val db = DBHandler(requireContext())
+        val listaCanastas = db.db_get_canastasPendientes()
+        println(listaCanastas)
         // Prueba de listview
-        val canasta_1 = Canasta("Compras super",12990, "Lider", "Compras del mes que debo hacer en el super", LocalDate.now(), LocalTime.now())
-        val canasta_2 = Canasta("Compras ropa",34600, "Falabella", "Comprar ropa en falabella", LocalDate.now(), LocalTime.now())
-        val listaCanastas = listOf(canasta_1, canasta_2)
+        //val canasta_1 = Canasta("Compras super",12990, "Lider", "Compras del mes que debo hacer en el super", LocalDate.now(), LocalTime.now())
+        //        val canasta_2 = Canasta("Compras ropa",34600, "Falabella", "Comprar ropa en falabella", LocalDate.now(), LocalTime.now())
+        //        val listaCanastas = listOf(canasta_1, canasta_2)
         recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas)
         recyclerViewPendientes.layoutManager = LinearLayoutManager(activity)
         recyclerViewPendientes.setHasFixedSize(true)
