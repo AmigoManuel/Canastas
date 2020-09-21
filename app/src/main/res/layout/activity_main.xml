@@ -32,7 +32,7 @@
                 android:layout_gravity="bottom|end"
                 android:layout_margin="16dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:onClick="nueva_canasta"
+                android:onClick="nuevaCanasta"
                 android:src="@drawable/ic_baseline_add_shopping_cart_24" />
         </FrameLayout>
         <!-- Tabs -->

@@ -5,4 +5,8 @@
     <color name="colorAccent">#03DAC5</color>
     <!-- Definiciones de colores -->
     <color name="colorWhite">#fafafa</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGray">#7A7A7A</color>
+    <color name="colorGreenLight">#00E676</color>
+    <color name="colorRedLight">#F50057</color>
 </resources>

@@ -8,4 +8,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_pendientes_title">Compras pendientes</string>
+    <string name="title_nueva_canasta">Nueva Canasta</string>
+    <string name="info_canasta_nombre">Nombre de la Canasta</string>
+    <string name="info_canasta_tienda">Tienda donde comprar</string>
+    <string name="info_canasta_descripcion">Descripción sobre la canasta</string>
+    <string name="btn_nueva_canasta_aceptar">Añadir</string>
+    <string name="btn_nueva_canasta_cancelar">Cancelar</string>
 </resources>
