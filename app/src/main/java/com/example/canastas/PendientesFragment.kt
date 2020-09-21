@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.canastas.db.DBHandler
 import com.example.canastas.models.Canasta
 import kotlinx.android.synthetic.main.fragment_pendientes.*
@@ -50,7 +51,15 @@ class PendientesFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        // Despliega las canastas pendientes dentro del fragment
         setCanastasOnView()
+        // Manejo de clicks en item de la recyclerView
+        recyclerViewPendientes.addOnItemClickListener(object: OnItemClickListener {
+            override fun onItemClicked(position: Int, view: View) {
+                // TODO: Que hacer al clickear un item
+            }
+        })
     }
 
     // Se ejecuta al volver dentro del fragment
@@ -61,18 +70,36 @@ class PendientesFragment : Fragment() {
         setCanastasOnView()
     }
 
+    // Interface para utilizar al clickear un item de la recyclerView
+    interface OnItemClickListener {
+        fun onItemClicked(position: Int, view: View)
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun setCanastasOnView(){
+        // Consulta por las canastas en la bd
         val db = DBHandler(requireContext())
         val listaCanastas = db.db_get_canastasPendientes()
         println(listaCanastas)
-        // Prueba de listview
-        //val canasta_1 = Canasta("Compras super",12990, "Lider", "Compras del mes que debo hacer en el super", LocalDate.now(), LocalTime.now())
-        //        val canasta_2 = Canasta("Compras ropa",34600, "Falabella", "Comprar ropa en falabella", LocalDate.now(), LocalTime.now())
-        //        val listaCanastas = listOf(canasta_1, canasta_2)
+        // Setea las canastas de la bd dentro del recyclerView
         recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas)
         recyclerViewPendientes.layoutManager = LinearLayoutManager(activity)
         recyclerViewPendientes.setHasFixedSize(true)
+    }
+
+    // ItemClickListener al presionar un item
+    private fun RecyclerView.addOnItemClickListener(onClickListener: OnItemClickListener) {
+        this.addOnChildAttachStateChangeListener(object: RecyclerView.OnChildAttachStateChangeListener {
+
+            override fun onChildViewAttachedToWindow(view: View) {
+                val holder = getChildViewHolder(view)
+                onClickListener.onItemClicked(holder.adapterPosition, view)
+            }
+
+            override fun onChildViewDetachedFromWindow(view: View) {
+                view.setOnClickListener(null)
+            }
+        })
     }
 
     companion object {
