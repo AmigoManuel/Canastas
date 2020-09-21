@@ -83,7 +83,8 @@
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
             android:shadowColor="@color/colorBlack"
-            android:shadowRadius="10" />
+            android:shadowRadius="10"
+            android:onClick="aceptarNuevaCanasta"/>
 
         <Button
             android:layout_width="0dp"

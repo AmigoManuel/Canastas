@@ -36,16 +36,6 @@ class MainActivity : AppCompatActivity() {
         // Inicia nuevo activity para añadir canasta
         val intent = Intent(this, NuevaCanastaActivity::class.java)
         startActivity(intent)
-        // val canasta_1 = Canasta(
-        //            "Compras super",
-        //            12990,
-        //            "Lider",
-        //            "Compras del mes que debo hacer en el super",
-        //            LocalDate.now(),
-        //            LocalTime.now()
-        //        )
-        //        val db = DBHandler(applicationContext)
-        //        db.db_nueva_canasta(canasta_1)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
