@@ -14,4 +14,6 @@
     <string name="info_canasta_descripcion">Descripción sobre la canasta</string>
     <string name="btn_nueva_canasta_aceptar">Añadir</string>
     <string name="btn_nueva_canasta_cancelar">Cancelar</string>
+    <string name="fragment_completadas_title">Compras completadas</string>
+    <string name="fragment_canceladas_title">Compras canceladas</string>
 </resources>
