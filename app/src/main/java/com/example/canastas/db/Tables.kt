@@ -16,6 +16,9 @@ class Tables {
             const val COL_DESCRIPCION = "descripcion"
             const val COL_FECHA = "fecha"
             const val COL_HORA = "hora"
+            // Estado de la compra
+            // pendiente, completada o cancelada
+            const val COL_ESTADO = "estado"
         }
     }
     // tabla producto
@@ -32,6 +35,7 @@ class Tables {
     abstract class ProductoEnCanasta {
         companion object{
             const val TABLE_NAME = "ProductoEnCanasta"
+            const val COL_ID = "id"
             const val COL_ID_CANASTA = "id_canasta"
             const val COL_ID_PRODUCTO = "id_producto"
         }
