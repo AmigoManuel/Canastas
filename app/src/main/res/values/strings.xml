@@ -16,4 +16,6 @@
     <string name="btn_nueva_canasta_cancelar">Cancelar</string>
     <string name="fragment_completadas_title">Compras completadas</string>
     <string name="fragment_canceladas_title">Compras canceladas</string>
+    <string name="btn_canasta_completar">Completar</string>
+    <string name="btn_canasta_cancelar">Cancelar</string>
 </resources>
