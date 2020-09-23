@@ -1,5 +1,6 @@
 package com.example.canastas
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -43,12 +44,6 @@ class PendientesFragment : Fragment() {
 
         // Despliega las canastas pendientes dentro del fragment
         setCanastasOnView()
-        // Manejo de clicks en item de la recyclerView
-        recyclerViewPendientes.addOnItemClickListener(object: OnItemClickListener {
-            override fun onItemClicked(position: Int, view: View) {
-
-            }
-        })
     }
 
     // Se ejecuta al volver dentro del fragment
@@ -57,11 +52,6 @@ class PendientesFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         setCanastasOnView()
-    }
-
-    // Interface para utilizar al clickear un item de la recyclerView
-    interface OnItemClickListener {
-        fun onItemClicked(position: Int, view: View)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -74,21 +64,6 @@ class PendientesFragment : Fragment() {
         recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas)
         recyclerViewPendientes.layoutManager = LinearLayoutManager(activity)
         recyclerViewPendientes.setHasFixedSize(true)
-    }
-
-    // ItemClickListener al presionar un item
-    private fun RecyclerView.addOnItemClickListener(onClickListener: OnItemClickListener) {
-        this.addOnChildAttachStateChangeListener(object: RecyclerView.OnChildAttachStateChangeListener {
-
-            override fun onChildViewAttachedToWindow(view: View) {
-                val holder = getChildViewHolder(view)
-                onClickListener.onItemClicked(holder.adapterPosition, view)
-            }
-
-            override fun onChildViewDetachedFromWindow(view: View) {
-                view.setOnClickListener(null)
-            }
-        })
     }
 
     companion object {
