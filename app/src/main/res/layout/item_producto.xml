@@ -25,7 +25,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.google.android.material.textview.MaterialTextView
+            <TextView
                 android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,25 +33,33 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="5dp">
+            </TextView>
 
-            </com.google.android.material.textview.MaterialTextView>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/valor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="valor"
-                android:layout_marginBottom="2dp">
-
-            </com.google.android.material.textview.MaterialTextView>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/cantidad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="cantidad">
-
-            </com.google.android.material.textview.MaterialTextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"/>
+                <TextView
+                    android:id="@+id/valor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="valor"
+                    android:layout_marginBottom="2dp">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" x "/>
+                <TextView
+                    android:id="@+id/cantidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="cantidad">
+                </TextView>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -63,15 +71,15 @@
             android:gravity="bottom|end"
             android:orientation="vertical">
 
-            <com.google.android.material.textview.MaterialTextView
+            <TextView
                 android:id="@+id/sub_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$100.0"
                 android:textStyle="italic|bold"
                 android:textSize="25sp">
+            </TextView>
 
-            </com.google.android.material.textview.MaterialTextView>
         </LinearLayout>
 
     </LinearLayout>
