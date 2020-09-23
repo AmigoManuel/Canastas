@@ -1,6 +1,5 @@
 package com.example.canastas
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,7 +8,6 @@ import com.example.canastas.models.Canasta
 import kotlinx.android.synthetic.main.activity_canasta.*
 
 // Activity para desplegar la canasta al ser seleccionada
-// TODO: se debe identificar si la canasta es pendiente, cancelada o completada
 
 class CanastaActivity : AppCompatActivity() {
 

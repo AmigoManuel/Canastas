@@ -1,4 +1,4 @@
-package com.example.canastas
+package com.example.canastas.fragments
 
 import android.content.Intent
 import android.os.Build
@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.canastas.CanastaActivity
+import com.example.canastas.R
+import com.example.canastas.adapters.CanastaAdapter
 import com.example.canastas.db.DBHandler
 import com.example.canastas.models.Canasta
 import kotlinx.android.synthetic.main.fragment_pendientes.*

@@ -1,10 +1,10 @@
-package com.example.canastas
+package com.example.canastas.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.canastas.R
 import com.example.canastas.models.Canasta
 import kotlinx.android.synthetic.main.item_canasta.view.*
 

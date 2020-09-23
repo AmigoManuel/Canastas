@@ -1,11 +1,14 @@
-package com.example.canastas
+package com.example.canastas.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.canastas.fragments.CanceladasFragment
+import com.example.canastas.fragments.CompletadasFragment
+import com.example.canastas.fragments.PendientesFragment
 
 // PageAdapter se encarga de gestionar que fragment mostrar al presionar un tab
-// PageAdapter hereda de FragmentPagerAdapter
+// PageAdapter hereda de Fragm  entPagerAdapter
 class PageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     // Cantidad de tabs
     override fun getCount(): Int {
