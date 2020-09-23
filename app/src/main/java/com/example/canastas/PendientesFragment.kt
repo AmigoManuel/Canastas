@@ -50,7 +50,13 @@ class PendientesFragment : Fragment() {
 
     // Función que se ejecuta al clickear un item de la lista
     private fun canastaItemClicked(canasta: Canasta) {
-        Toast.makeText(requireContext(),"item ${canasta.nombre}",Toast.LENGTH_SHORT).show()
+        // Intent nos llevara a una nueva Activity
+        // debemos entregarle un context, la activity y si queremos entregarle datos
+        // añadimos un putExtra con el metodo apply
+        val intent = Intent(context, CanastaActivity::class.java).apply {
+            putExtra("obj_canasta", canasta)
+        }
+        startActivity(intent)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -60,7 +66,6 @@ class PendientesFragment : Fragment() {
         // Asigna la lista de canastas en el array local
         listaCanastas = db.db_get_canastasPendientes()
         // Setea las canastas de la bd dentro del recyclerView
-        //{ partItem : PartData -> partItemClicked(partItem) }
         recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas) { canasta: Canasta -> canastaItemClicked(canasta) }
         recyclerViewPendientes.layoutManager = LinearLayoutManager(activity)
         recyclerViewPendientes.setHasFixedSize(true)
