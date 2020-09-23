@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -54,6 +55,10 @@ class PendientesFragment : Fragment() {
         setCanastasOnView()
     }
 
+    private fun canastaItemClicked(canasta: Canasta) {
+        Toast.makeText(requireContext(),"item ${canasta.nombre}",Toast.LENGTH_SHORT).show()
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun setCanastasOnView(){
         // Consulta por las canastas en la bd
@@ -61,7 +66,8 @@ class PendientesFragment : Fragment() {
         // Asigna la lista de canastas en el array local
         listaCanastas = db.db_get_canastasPendientes()
         // Setea las canastas de la bd dentro del recyclerView
-        recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas)
+        //{ partItem : PartData -> partItemClicked(partItem) }
+        recyclerViewPendientes.adapter = CanastaAdapter(listaCanastas) { canasta: Canasta -> canastaItemClicked(canasta) }
         recyclerViewPendientes.layoutManager = LinearLayoutManager(activity)
         recyclerViewPendientes.setHasFixedSize(true)
     }
